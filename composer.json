@@ -1,0 +1,18 @@
+{
+  "name": "kriss/docker-compose-generator",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "kriss",
+      "email": "462679766@qq.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "kriss\\fileGenerator\\": "src",
+      "kriss\\fileGeneratorExample\\": "example"
+    }
+  }
+}
