@@ -1,6 +1,6 @@
 <?php
 
-namespace kriss\fileGenerator;
+namespace kriss\envGenerator;
 
 class BaseObject
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace kriss\fileGenerator;
+namespace kriss\envGenerator;
 
 abstract class Generator extends BaseObject
 {
@@ -41,14 +41,14 @@ abstract class Generator extends BaseObject
      * @param Env $envObj
      * @return mixed
      */
-    abstract protected function generateFiles(array $config, string $env, Env $envObj);
+    abstract protected function generateFiles($config, $env, $envObj);
 
     /**
      * env 文件的路径
      * @param string $env
      * @return string
      */
-    protected function getEnvFilePath(string $env)
+    protected function getEnvFilePath($env)
     {
         return rtrim($this->generateFilePath, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $env;
     }

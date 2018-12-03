@@ -1,5 +1,5 @@
 {
-  "name": "kriss/docker-compose-generator",
+  "name": "kriss/env-generator",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -11,8 +11,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "kriss\\fileGenerator\\": "src",
-      "kriss\\fileGeneratorExample\\": "example"
+      "kriss\\envGenerator\\": "src"
     }
   }
 }
