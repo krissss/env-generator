@@ -39,7 +39,6 @@ abstract class Generator extends BaseObject
      * @param array $config
      * @param string $env
      * @param Env $envObj
-     * @return mixed
      */
     abstract protected function generateFiles($config, $env, $envObj);
 
