@@ -1,5 +1,6 @@
 {
   "name": "kriss/env-generator",
+  "description": "php env generator",
   "type": "library",
   "license": "MIT",
   "authors": [
