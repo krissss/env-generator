@@ -13,8 +13,8 @@ require __DIR__ . '/../../vendor/autoload.php';
             'docker' => [
                 'app' => [
                     'name' => 'app',
-                    'image' => 'hub.tencentyun.com/kriss/docker-yii2',
-                    'version' => '7.0-v1.6-unzip',
+                    'image' => 'daocloud.io/krissss/docker-yii2_71',
+                    'version' => 'v1.6-unzip',
                     'port' => 10080,
                     'appPath' => '/app/yii2advanced',
                     'composerPath' => '~/.composer',
