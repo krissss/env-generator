@@ -1,8 +1,6 @@
 <?php
 
-namespace kriss\envGeneratorExample\simple;
-
-class Generator extends \kriss\envGenerator\Generator
+class EnvGenerator extends \kriss\envGenerator\Generator
 {
     protected function generateFiles($config, $env, $envObj)
     {

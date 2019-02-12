@@ -9,22 +9,31 @@ abstract class Generator extends BaseObject
      */
     public $generateFilePath;
     /**
-     * @var Env
+     * @var array
      */
     public $baseEnv;
     /**
      * @var array
      */
     public $envConf;
+    /**
+     * @var string
+     */
+    public $envClass = 'kriss\envGenerator\Env';
 
     public function run()
     {
-        foreach ($this->envConf as $env => $envObj) {
+        $envClass = $this->envClass;
+        /** @var Env $baseEnv */
+        $baseEnv = new $envClass($this->baseEnv);
+
+        foreach ($this->envConf as $env => $envConf) {
             // 清空环境目录
             $this->removeDirectory($this->getEnvFilePath($env));
             // 合并环境配置和基础配置
-            /** @var $envObj Env */
-            $config = Tools::nestedMerge($this->baseEnv->config, $envObj->config);
+            /** @var Env $envObj */
+            $envObj = new $envClass($envConf);
+            $config = Tools::nestedMerge($baseEnv->config, $envObj->config);
             // 替换配置中的变量
             $config = Tools::replaceAttribute($config, $config);
             // 生成配置文件

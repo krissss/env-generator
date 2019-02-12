@@ -1,33 +1,31 @@
 <?php
 
-use kriss\envGenerator\Env;
-use kriss\envGeneratorExample\simple\Generator;
-
 require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . 'EnvGenerator.php';
 
-(new Generator([
+(new \EnvGenerator([
     'generateFilePath' => __DIR__,
-    'baseEnv' => new Env([
+    'baseEnv' => [
         'desc' => '基础配置',
         'config' => [
             'env' => 'prod',
             'appKey' => '123456',
             'appSecret' => 'secret123456'
         ],
-    ]),
+    ],
     'envConf' => [
-        'dev' => new Env([
+        'dev' => [
             'desc' => '开发环境',
             'config' => [
                 'env' => 'dev',
             ],
-        ]),
-        'prod' => new Env([
+        ],
+        'prod' => [
             'desc' => '正式环境',
             'config' => [
                 'appKey' => '1234567',
                 'appSecret' => 'secret1234567'
             ],
-        ]),
+        ],
     ],
 ]))->run();

@@ -1,10 +1,8 @@
 <?php
 
-namespace kriss\envGeneratorExample\complex;
-
 use kriss\envGenerator\Env;
 
-class Generator extends \kriss\envGenerator\Generator
+class EnvGenerator extends \kriss\envGenerator\Generator
 {
     protected function generateFiles($config, $env, $envObj)
     {
@@ -23,7 +21,7 @@ class Generator extends \kriss\envGenerator\Generator
      * @param string $commentStr
      * @return string
      */
-    protected function commonHeader(Env $envObj, $commentStr = '#')
+    protected function commonHeader($envObj, $commentStr = '#')
     {
         $thisFile = __CLASS__;
         return <<<EOL

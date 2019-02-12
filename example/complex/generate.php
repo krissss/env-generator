@@ -1,13 +1,11 @@
 <?php
 
-use kriss\envGenerator\Env;
-use kriss\envGeneratorExample\complex\Generator;
-
 require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/EnvGenerator.php';
 
-(new Generator([
+(new \EnvGenerator([
     'generateFilePath' => __DIR__,
-    'baseEnv' => new Env([
+    'baseEnv' => [
         'desc' => '基础配置',
         'config' => [
             'docker' => [
@@ -66,9 +64,9 @@ require __DIR__ . '/../../vendor/autoload.php';
                 ]
             ],
         ]
-    ]),
+    ],
     'envConf' => [
-        'dev' => new Env([
+        'dev' => [
             'desc' => '开发环境',
             'config' => [
                 'docker' => [
@@ -92,8 +90,8 @@ require __DIR__ . '/../../vendor/autoload.php';
                     'cookieKey' => 'jjkj1kj3j1239890aksdqwe',
                 ],
             ],
-        ]),
-        'prod' => new Env([
+        ],
+        'prod' => [
             'desc' => '正式环境',
             'config' => [
                 'docker' => [
@@ -109,8 +107,8 @@ require __DIR__ . '/../../vendor/autoload.php';
                     'cookieKey' => '12jlkjsd90898qjkl123',
                 ],
             ],
-        ]),
-        'test' => new Env([
+        ],
+        'test' => [
             'desc' => '正式环境',
             'config' => [
                 'docker' => [
@@ -125,6 +123,6 @@ require __DIR__ . '/../../vendor/autoload.php';
                     'cookieKey' => '12jlkjsd90898qjkl123',
                 ],
             ],
-        ])
+        ]
     ],
 ]))->run();
